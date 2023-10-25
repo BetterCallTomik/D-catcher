@@ -1,0 +1,217 @@
+.name {
+    margin-bottom: 800px;
+    margin-right: 100px;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+body{
+    margin: 0;
+    font-family: 'Titillium Web', sans-serif;    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #FBEAEB;
+    transition: 0.5s ease-in-out;
+}
+
+body.active {
+    background-color: red;
+}
+
+.container{
+   width: 800px;
+   height: 500px;
+   padding: 40px 0;
+
+   position: relative;
+}
+
+.block{
+    height: 100%;
+    background-color: #2F3C7E,;
+    box-shadow: 0 6px 45px black;
+
+    display: flex;
+    align-items: center;
+}
+
+.block_item{
+    text-align: center;
+    width: 50%;
+}
+
+.block_item_title{
+    font-size: 10px;
+    font-weight: 500;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.block_item_btn{
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: white;
+    color: black;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.form_box{
+    background-color: white;
+    height: 100%;
+    width: 50%;
+    box-shadow: 0 6px 45px black;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    transition: 0.5s ease-in-out;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+.form_box.active{
+    left: 50%;
+}
+
+.form_box.active .form_signin{
+    left: -100%;
+    transition-delay: 0s;
+}
+.form_box.active .form_signin{
+    left: 0;
+    transition-delay: 0.25s;
+}
+
+
+.form{
+   position: absolute;
+   width: 80%;
+   height: 50%;
+   font-size: 16px; 
+   margin-left: 30px;
+
+   transition: 0.5s;
+}
+
+.form_signin{
+    left: 0;
+    transition-delay: 0.25s;
+}
+
+.form_signup{
+    left:100%;
+    transition-delay: 0s;
+}
+
+.form_title{
+    font-size: 1.5em;
+    font-weight: 500;
+    color: black;  
+    margin-left: 30px;
+
+}
+
+.form_input{
+    position: center;
+    width: 80%;
+    padding: 10px;
+    border: solid 1px black;
+    font-size: inherit;
+   margin-left: 30px;
+}
+
+.form_btn{
+    border: none;
+    cursor: pointer;
+    font-size: inherit;
+    background-color:#2F3C7E,;
+    color: white;
+    padding: 10px 50px;
+    margin-left: 30px;
+}
+
+.form_forgot{
+    margin-left: 30px;
+    color: black;
+    cursor: pointer;
+
+}
+
+.form_btn_signup{
+    background-color: red;
+}
+
+/* #2F3C7E */
+
+.name {
+    margin-bottom: 800px;
+    margin-right: 100px;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.container{
+   width: 800px;
+   height: 500px;
+   padding: 40px 0;
+
+   position: relative;
+}
+
+.block{
+    height: 450px;
+    background-color: #2F3C7E,;
+    box-shadow: 0 6px 45px black;
+
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 100px;
+}
+
+body{
+    margin: 0;
+    font-family: 'Titillium Web', sans-serif;    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: #FBEAEB;
+    transition: 0.5s ease-in-out;
+}
+
+.name2 {
+    margin: 70px;
+    margin-bottom: 400px;
+}
+
+.finder {
+    margin: 60px;
+    margin-right: 110px;
+    margin-bottom: 375px;
+    height: 35px;
+    width: 300px;
+}
+
+.profile_block{
+    display: inline;
+}
+
+.profile_name{
+    margin-bottom: 800px;
+}
+
+.avatar{
+    width: 50px;
+    height: 50px;
+    border-radius: 30%;
+    background-color: black;
+    position: left;
+}
