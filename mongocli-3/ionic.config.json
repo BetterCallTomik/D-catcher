@@ -1,0 +1,8 @@
+{
+  "name": "mongocli3",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "9456e693"
+}
