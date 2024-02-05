@@ -1,0 +1,113 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Главная
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">
+
+
+      Client
+
+
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+   <ion-card style="padding: 20pt;"  [class.hide]="html_form==1">
+   <div [innerHTML]="ProfName"></div>
+<div [class.hide]="html_form==1"><ion-button size="small" style="width: 10%;" (click)="SignOut()">Выйти</ion-button></div>
+     </ion-card>
+
+
+
+      <ion-card style="padding: 20pt;"  [class.hide]="html_form==1">
+   <div><ion-button fill="clear"  [routerLink]="['/cart']">Корзина</ion-button> (<b><ion-label [innerHTML]="gcount"></ion-label></b> товаров)</div>
+
+     </ion-card>
+
+
+ <ion-item-group [class.hide]="html_form==0" style="width: 60%;">
+      <ion-item-divider style="background-color: #3F75FF;">
+        <ion-label style="color: #fff; ">Имя/Почта:</ion-label>
+      </ion-item-divider>
+      <ion-item>
+        <ion-input placeholder="Напишите свой логин или почту"  type="text"
+      [(ngModel)]="loginForm.login"
+      required></ion-input>
+      </ion-item>
+    </ion-item-group>
+
+    <ion-item-group [class.hide]="html_form==0" style="width: 60%;">
+      <ion-item-divider style="background-color: #3F75FF;">
+        <ion-label style="color: #fff;">Пароль:</ion-label>
+      </ion-item-divider>
+      <ion-item>
+        <ion-input placeholder="Напишите пароль" type="password"
+      [(ngModel)]="loginForm.password"
+      required></ion-input>
+      </ion-item>
+    </ion-item-group>
+
+    <div  [class.hide]="html_form==0"><ion-button size="large" style="width: 60%;" (click)="SignIn()">Войти</ion-button></div>
+<div  [class.hide]="html_form==0"><ion-button fill="clear" size="default" [routerLink]="['/reg2']">Регистрация</ion-button></div>
+
+
+<ion-item-group [class.hide]="html_form==1" style="width: 60%;" >
+
+      <ion-item>
+        <ion-input placeholder="Поиск по товарам"  type="text"
+      [(ngModel)]="schForm.query"
+      required></ion-input>
+      </ion-item>
+    </ion-item-group>
+
+
+    <div style="text-align: center; margin: 10pt 0; width: 60%;" [class.hide]="html_form==1"><ion-button size="large" style="width: 100%;" (click)="Search()">Искать</ion-button></div>
+
+
+
+
+
+  <div *ngFor="let good of goods">
+  <!--
+  <ion-card [routerLink]="['/item-detail']" [queryParams]=
+    "{item:good.item,price: good.price}" >
+-->
+<ion-card  >
+
+    <ion-card-content>
+      <ion-grid>
+
+        <ion-row>
+          <ion-col>
+             {{good.item}} ({{good.market}})
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            Цена: <b>{{good.price}}</b>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-button size="small" (click)="InCart(good.id,good.market,good.category,good.item,good.price)">В корзину</ion-button>
+          </ion-col>
+        </ion-row>
+        </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</div>
+
+
+
+
+
+</ion-content>

@@ -1,0 +1,57 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Регистрация</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+
+
+<br><br>
+
+
+<ion-item-group>
+  <ion-item>
+    <ion-label>E-Mail:</ion-label>
+    <ion-input placeholder="mail@mail.ru" type="email" id="email" name="email" required  #email="ngModel" [(ngModel)]="loginForm.login"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Пароль:</ion-label>
+    <ion-input placeholder="Придумайте пароль" type="password"  id="password" name="password" required  #password="ngModel" [(ngModel)]="loginForm.password" required minlength="7"></ion-input>
+  </ion-item>
+</ion-item-group>
+
+<ion-item-group>
+
+<div *ngIf="email.invalid && (email.dirty || email.touched)"
+    class="alert">
+
+  <div *ngIf="email.errors?.['required']">
+    Email обязательное поле!
+  </div>
+
+
+
+</div>
+
+<div *ngIf="password.invalid && (password.dirty || password.touched)"
+    class="alert">
+
+  <div *ngIf="password.errors?.['required']">
+    Пароль обязательное поле!
+  </div>
+  <div *ngIf="password.errors?.['minlength']">
+    Пароль должен содержать не менее 7-х букв.
+  </div>
+
+
+</div>
+
+<ion-item >
+    <ion-label><ion-button size="large" [disabled]="!email.valid || !password.valid" (click)="printForm()">Зарегистрироваться</ion-button></ion-label>
+  </ion-item>
+</ion-item-group>
+<div ><ion-button fill="clear" size="default" [routerLink]="['/home']">Главная</ion-button></div>
+
+</ion-content>
